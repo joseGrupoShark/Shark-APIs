@@ -1,0 +1,103 @@
+{
+  "name": "Cliente",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    
+    "Codigo": {
+      "type": "number",
+      "required": true
+    },
+    "Nome": {
+      "type": "string",
+      "required": true
+    },
+    "TipoPessoa": {
+      "type": "string",
+      "required": true,
+      "default": "F-Fisica / J-Juridica"
+    },
+    "Cnpj_Cpf": {
+      "type": "string",
+      "required": true,
+      "default": "Tamanho 19 Caracter"
+    },
+    "Estado": {
+      "type": "string",
+      "required": true
+    },
+    "InscEstad": {
+      "type": "string",
+      "required": true,
+      "default": "Incrição Estadual"
+    },
+    "NomeFantasia": {
+      "type": "string",
+      "required": true
+    },
+    "Municipio": {
+      "type": "string",
+      "required": true
+    },
+    "CodMunicipio": {
+      "type": "string",
+      "required": true,
+      "default": "Codigo Municipio"
+    },
+    "Tipo": {
+      "type": "string",
+      "required": true,
+      "default": "F-Consumidor Final / L-Produtor Ruaral / R-Revendedor / S-Solidario / X-Exportação"
+    },
+    "Endereco": {
+      "type": "string",
+      "required": true
+    },
+    "Cep": {
+      "type": "string",
+      "required": true
+    },
+    "Natureza": {
+      "type": "string",
+      "required": true
+    },
+    "PaisBacen": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "Contribuinte": {
+      "type": "string",
+      "required": true,
+      "default": "S-Sim / N-Não"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "check"
+    }
+  ],
+  "methods": {}
+}
